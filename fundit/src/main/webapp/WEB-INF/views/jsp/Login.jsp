@@ -1,3 +1,5 @@
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -6,11 +8,16 @@
 	<title>FundIt</title>
 
 	<!-- Google Fonts -->
-	<link href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700|Lato:400,100,300,700,900' rel='stylesheet' type='text/css'>
+<!-- 	<link href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700|Lato:400,100,300,700,900' rel='stylesheet' type='text/css'>
 
 	<link rel="stylesheet" href="/resources/core/css/animate.css">
-	<!-- Custom Stylesheet -->
-	<link rel="stylesheet" href="/resources/core/css/style.css">
+	Custom Stylesheet
+	<link rel="stylesheet" href="/resources/core/css/style.css"> -->
+
+<spring:url value="/resources/core/css/animate.css" var="coreCss" />
+<spring:url value="/resources/core/css/style.css" var="bootstrapCss" />
+<link href="${bootstrapCss}" rel="stylesheet" />
+<link href="${coreCss}" rel="stylesheet" />
 
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
 </head>
@@ -18,7 +25,7 @@
 <body>
 	<div class="container">
 		<div class="top">
-			<h1 id="title" class="hidden"><span id="logo">FundIT</span></span></h1>
+			<h1 id="title" class="hidden"><span id="logo">FundIT</span></h1>
 		</div>
 		<div class="login-box animated fadeInUp">
 			<div class="box-header">
